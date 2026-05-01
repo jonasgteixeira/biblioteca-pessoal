@@ -89,3 +89,32 @@ console.log('\n--- Removendo livro índice 3 ---');
 removerLivro(3);
 
 exibirBiblioteca();
+
+// --- Busca e filtros ---
+
+function buscarPorTitulo(termo: string): number[] {
+  const termoLower: string = termo.toLowerCase();
+  const indices: number[] = [];
+  for (let i = 0; i < titulos.length; i++) {
+    if (titulos[i]!.toLowerCase().includes(termoLower)) {
+      indices.push(i);
+    }
+  }
+  return indices;
+}
+
+function listarPorAutor(autor: string): string[] {
+  return titulos.filter((_, i) =>
+    autores[i]!.toLowerCase() === autor.toLowerCase()
+  );
+}
+
+// --- Teste da etapa ---
+console.log('\n--- Busca por título contendo "O" ---');
+const indicesBusca = buscarPorTitulo('O');
+console.log('Índices encontrados:', indicesBusca);
+console.log('Títulos:', indicesBusca.map(i => titulos[i]).join(', '));
+
+console.log('\n--- Livros de George Orwell ---');
+const orwell = listarPorAutor('George Orwell');
+console.log(orwell.join(', '));
