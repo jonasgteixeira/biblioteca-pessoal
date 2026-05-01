@@ -191,7 +191,7 @@ function totalPaginasLidas(): number {
 }
 
 // --- Teste da etapa ---
-console.log('\n=================== ESTATÍSTICAS ===================');
+console.log('\n================ ESTATÍSTICAS ================');
 console.log(`Total de livros: ${totalLivros()}`);
 console.log(`Livros lidos: ${totalLidos()} (${percentualLidos().toFixed(2)}%)`);
 console.log(`Média das avaliações: ${mediaAvaliacoes().toFixed(2)}`);
@@ -201,7 +201,7 @@ console.log(`Total de páginas lidas: ${totalPaginasLidas()}`);
 // --- Classificação por década ---
 
 function exibirPorDecada(): void {
-  console.log('\n=== POR DÉCADA ===');
+  console.log('\n================= POR DÉCADA =================');
 
   const decadas: number[] = [];
   for (let i = 0; i < anos.length; i++) {
@@ -225,3 +225,4 @@ function exibirPorDecada(): void {
 
 // --- Teste da etapa ---
 exibirPorDecada();
+console.log('\n===================== FIM DA EXECUÇÃO =====================');

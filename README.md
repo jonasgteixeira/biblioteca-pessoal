@@ -5,4 +5,4 @@
 5. No quinto commit implementamos as funções de controle de status de leitura
 6. No sexto commit adicionamos as funções de estatísticas
 7. No sétimo commit implementamos a classificação por década
-8. 
+8. Organizamos a saída final para ter a aparência do exemplo dado pelo professor
