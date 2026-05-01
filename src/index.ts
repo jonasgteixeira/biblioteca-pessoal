@@ -45,3 +45,47 @@ function exibirBiblioteca(): void {
 
 // --- Teste da etapa ---
 exibirBiblioteca();
+
+// ...(Códigos da Etapa 2)...
+
+// --- Cadastro e remoção ---
+
+function adicionarLivro(titulo: string, autor: string, ano: number, pag: number): void {
+    if(ano <= 0){
+        console.log('Erro: o ano deve ser positivo.');
+        return;
+    }
+    if(pag <= 0){
+        console.log('Erro: o número de páginas deve ser positivo.')
+        return;
+    }
+    titulos.push(titulo);
+    autores.push(autor);
+    anos.push(ano);
+    paginas.push(pag);
+    lido.push(false);
+    avaliacoes.push(0);
+}
+
+function removerLivro(indice: number): void{
+    if(indice < 0 || indice >= titulos.length){
+        console.log('Erro: índice inválido.');
+        return;
+    }
+    titulos.splice(indice, 1);
+    autores.splice(indice, 1);
+    anos.splice(indice, 1);
+    paginas.splice(indice, 1);
+    lido.splice(indice, 1);
+    avaliacoes.splice(indice, 1);
+}
+
+// --- Teste da etapa ---
+console.log('\n--- Adicionando 2 novos Livros ---');
+adicionarLivro('O Pequeno Principe','Antoine de Saint-Exupéry', 1943, 96);
+adicionarLivro('A Revolução dos Bichos','George Orwell', 1945, 144);
+
+console.log('\n--- Removendo livro índice 3 ---');
+removerLivro(3);
+
+exibirBiblioteca();
