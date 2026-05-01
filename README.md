@@ -4,3 +4,5 @@
 4. No quarto commit implementamos as funções de filtro por título e autor
 5. No quinto commit implementamos as funções de controle de status de leitura
 6. No sexto commit adicionamos as funções de estatísticas
+7. No sétimo commit implementamos a classificação por década
+8. 

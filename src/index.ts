@@ -197,3 +197,31 @@ console.log(`Livros lidos: ${totalLidos()} (${percentualLidos().toFixed(2)}%)`);
 console.log(`Média das avaliações: ${mediaAvaliacoes().toFixed(2)}`);
 console.log(`Livro melhor avaliado: ${livroMaiorAvaliacao()}`);
 console.log(`Total de páginas lidas: ${totalPaginasLidas()}`);
+
+// --- Classificação por década ---
+
+function exibirPorDecada(): void {
+  console.log('\n=== POR DÉCADA ===');
+
+  const decadas: number[] = [];
+  for (let i = 0; i < anos.length; i++) {
+    const dec = Math.floor(anos[i]! / 10) * 10;
+    if (!decadas.includes(dec)) {
+      decadas.push(dec);
+    }
+  }
+  decadas.sort((a, b) => a - b);
+
+  for (const dec of decadas) {
+    const titulosDec: string[] = [];
+    for (let i = 0; i < anos.length; i++) {
+      if (Math.floor(anos[i]! / 10) * 10 === dec) {
+        titulosDec.push(titulos[i]!);
+      }
+    }
+    console.log(`${dec}s: ${titulosDec.join(', ')}`);
+  }
+}
+
+// --- Teste da etapa ---
+exibirPorDecada();
