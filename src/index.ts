@@ -118,3 +118,35 @@ console.log('Títulos:', indicesBusca.map(i => titulos[i]).join(', '));
 console.log('\n--- Livros de George Orwell ---');
 const orwell = listarPorAutor('George Orwell');
 console.log(orwell.join(', '));
+
+// --- Status de leitura ---
+function marcarComoLido(indice: number, avaliacao: number): void{
+    if(indice < 0 || indice >= titulos.length) {
+        console.log('Erro: Índice inválido.');
+        return;
+    }
+    if(avaliacao < 1 || avaliacao > 5){
+        console.log('Erro: Avaliação deve estar entre 1 e 5.');
+        return;
+    }
+    lido[indice] = true;
+    avaliacoes[indice] = avaliacao;
+}
+
+function listarLidos(): string[]{
+    return titulos.filter((_, i) => !lido[i]);
+}
+
+function listarPendentes(): string[] {
+    return titulos.filter((_, i) => !lido[i]);
+}
+
+//--- Teste da etapa ---
+console.log('\n--- Marcando "O Nome do Vento" como lido (avaliação 4) ---');
+//Após a remoção na etapa 3 o livro "O Nome do Vento" foi pro índice 4.
+marcarComoLido(4, 4);
+
+console.log('\n--- Livros Lidos ---');
+console.log(listarPendentes().join(', '));
+
+exibirBiblioteca();
